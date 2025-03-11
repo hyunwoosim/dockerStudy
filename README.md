@@ -89,6 +89,11 @@
 - 자동으로 network에 넣어준다.
   1. docker compose up
 
+- docker compse down
+  - container 중단,삭제
+
+- 웹서버가 꺼지면 다시 실행하는 세팅
+  1. restart: always
 
 ## Tip
 1. nodemon

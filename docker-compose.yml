@@ -1,25 +1,32 @@
 services:
   webserver:
     image: nodeserver:v1
-    ports:
-      - 8080:8080
-    depends_on:
-      - db
-    deploy:
-      mode: replicated
-      replicas: 3
-    # environment:
-    #   - name=value
+    networks:
+      - mynet1
+      - mynet2
 
   nginx:
     image: nginx:v1
     ports:
       - 80:80
-    # environment:
-    #   - name=value
+    networks:
+      - mynet1
+    restart: always
 
   db:
-  image: postgres:17.4-alpine3.21
-  environment:
+    image: postgres:17.4-alpine3.21
+    environment:
     - POSTGRES_USER=admin
     - POSTGRES_PASSWORD=qwer1234
+    networks:
+      - mynet2
+    volumes:
+      - :/var/lib/psotgresql/data
+
+networks:
+  mynet1:
+  mynet2:
+
+volumes:
+  postgres_vol:
+    external: true
