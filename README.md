@@ -79,6 +79,13 @@
 ## 이미지 내려받기
 1. docker pull 이미지명:태그명
 
+## network 만들기 
+### docker와 nginx 연결
+  1. docker network create 이름
+  2. docker run -d -p 포트:포트 --network 네트워크 이름 --name 컨테이너이름 이름:태그
+
+  
+
 
 ## Tip
 1. nodemon
