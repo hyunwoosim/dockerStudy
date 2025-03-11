@@ -84,7 +84,10 @@
   1. docker network create 이름
   2. docker run -d -p 포트:포트 --network 네트워크 이름 --name 컨테이너이름 이름:태그
 
-  
+## docker compose
+-  docker run 명령어들을 모아서 실행
+- 자동으로 network에 넣어준다.
+  1. docker compose up
 
 
 ## Tip
