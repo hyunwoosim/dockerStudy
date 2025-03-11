@@ -67,7 +67,17 @@
     - ./gradlew bootBuildImage
     - Spring boot에서 이미지를 자동으로 만들어주는 명령어
 
+## dockerhub에 이미지 올리기
+  1. docker tag 이미지명:태그명 도커허브이름/리파지토리이름:태그명
+  - 이름을 바꾸는 용도 
+    - 이미지명:태그명 -> 도커허브이름/리파지토리이름:태그명
+<img src="/readmeImage/dockerhub.png">
 
+  2. docker push 도커허브이름/리파지토리이름:태그명
+- 이미지 이름과 리파지토리 이름이 똑같아야 업로드가 가능하기 때문이다.
+
+## 이미지 내려받기
+1. docker pull 이미지명:태그명
 
 
 ## Tip
