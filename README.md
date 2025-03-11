@@ -32,6 +32,13 @@
   1. 터미널을 연다
   2. docker build -t 이미지이름:태그 . 
 
+## 터미널에서 이미지 실행 명렁어
+  1. docker run 이미지명:태그명
+  2. docker run -d(백그라운드에서 실행하는 명령어)
+  3. docker run -p 내컴퓨터포트:컨테이너 포트
+
+결론 : docker run -d -p 내컴퓨터포트:컨테이너포트 이미지명:태그명
+
 
 ## Tip
 1. nodemon
