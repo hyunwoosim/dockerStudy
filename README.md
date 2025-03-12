@@ -95,6 +95,50 @@
 - 웹서버가 꺼지면 다시 실행하는 세팅
   1. restart: always
 
+## docker compose up 할 때마다 build 자동으로하기
+1. yml에 build: 경로 추가
+2. docker compose up --build 
+
+## docker compose watch 기능
+### docker compose up --watch
+```
+ develop:
+      watch:
+         - action: sync+restart
+         // 변동사항 컨테이너에 복사해줌
+         // 이후 재시작 해준다.
+          paht: 경로
+          target: /app
+```
+- 변경사항이 생기면 컨테이너에 자동으로 복사해줌
+
+
+## nodejs 개발시 nodemon을 사용해도 된다.
+
+## Microservice Architecture
+- 기능마다 별도의 프로그램을 만들고 각각 따로 배포
+- 필요할때만 서로 통신하는 방식
+<img src="/readmeImage/Microservice Architecture.png">
+
+- 출처: 코딩애플
+
+## 마이크로 서비스 방식
+<img src="/readmeImage/Microservice2.png">
+
+- 출처: 코딩애플
+
+- Cluster : 프로젝트
+- service : 마이크로 서비스
+- task : 서로 붙어있어야할 컨테이너들을 묶는 단위
+
+## lode balancer
+<img src="/readmeImage/lode balancer.png">
+
+- 출처: 코딩애플
+
+- 균등하게 안내해주는 역할이다.
+
+
 ## Tip
 1. nodemon
   - 코드를 실시간 반영해주는 라이브러리 
@@ -102,3 +146,6 @@
   - nodemon server.js 실행
 2. pm2
   - 서버가 에러 때문에 죽었을때 알아서 실행되도록 해주는 라이브러리
+
+3. graceful shutdown
+  - 프로그램을 끌 때 성능 최적화 
